@@ -86,3 +86,23 @@ CALL update_agama('Mohamad Tsaniy Atila Dzaka', '3');
 CALL update_agama('Nabila Tsalsa Nuraisyah', '1');
 
 select nama, nama_agama from agama, pegawai_pns where agama.kode = pegawai_pns.agama_id;
+
+delimiter //
+create procedure insert_pegawai(
+    p_nip char(18),
+    p_nama varchar(100),
+    p_agama_id char(1)
+)
+begin
+    insert into pegawai_pns (nip, nama, agama_id) values (p_nip, p_nama, p_agama_id);
+end //
+delimiter ;
+
+CALL insert_pegawai('199001012024011001', 'Fulan Bin Fulan', '4');
+CALL insert_pegawai('199202022024011002', 'Siti Rahmawati', '1');
+CALL insert_pegawai('198805052023012003', 'Budi Santoso', '2');
+CALL insert_pegawai('199511112025011004', 'Agus Firmansyah', '5');
+
+
+select * from pegawai_pns;
+SELECT * FROM info_pns;
