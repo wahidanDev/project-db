@@ -27,4 +27,4 @@ DELIMITER ;
 -- Panggil fungsi dengan nama yang benar
 SELECT sf_hitungluas(2, 5);
 
-call hitungluas(2,5);
+call sf_hitungluas(2,5);
